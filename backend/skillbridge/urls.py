@@ -4,6 +4,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('accounts.urls')),
-    # each member adds only their own line below, for example:
-    # path('api/resume/', include('resume.urls')),
+    path('api/interview/', include('interview.urls')),
+    path('api/aptitude/', include('aptitude.urls')),
+    path('api/progress/', include('progress.urls')),
 ]
