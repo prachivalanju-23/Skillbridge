@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'accounts',
     'core',
+    'roadmap',
+    'jobs',
     'interview',
     'aptitude',
     'progress',

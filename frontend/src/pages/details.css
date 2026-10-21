@@ -1,0 +1,77 @@
+.job-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.job-card-link .job-card {
+  height: 100%;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.job-card-link:hover .job-card {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #4338ca;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.details-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 26px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.details-card h1 {
+  padding-right: 110px;
+}
+
+.details-section {
+  margin-top: 22px;
+}
+
+.details-section h3 {
+  margin-bottom: 8px;
+}
+
+.gap-list {
+  margin: 8px 0 0 20px;
+  color: #991b1b;
+}
+
+.apply-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 22px;
+  background: #4338ca;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.details-card .skill-tag {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+
+.details-card .skill-tag.matched {
+  background: #bbf7d0;
+  color: #166534;
+}
+
+.details-card .skill-tag.missing {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+.details-card {
+  border-radius: 20px;
+}

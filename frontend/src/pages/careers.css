@@ -1,0 +1,103 @@
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.career-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  padding: 22px;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.career-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.career-card.selected {
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+.career-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--primary-dark);
+}
+
+.career-card h3 {
+  font-size: 1.15rem;
+}
+
+.career-card p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.career-check {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+}
+
+.career-select-label {
+  margin-top: auto;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.goal-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0 4px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+}
+
+.goal-banner span {
+  opacity: 0.85;
+  font-size: 0.85rem;
+}
+
+.goal-banner h2 {
+  font-size: 1.3rem;
+}
+
+.goal-banner-btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
