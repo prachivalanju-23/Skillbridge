@@ -8,14 +8,16 @@ export function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('access'));
 
   const login = async (email, password) => {
-    const res = await api.post('auth/login/', { username: email, password });
+    const res = await api.post('auth/login/', { username: email.trim().toLowerCase(), password });
     localStorage.setItem('access', res.data.access);
     localStorage.setItem('refresh', res.data.refresh);
     setIsLoggedIn(true);
   };
 
-  const register = (name, email, password) =>
-    api.post('auth/register/', { first_name: name, email, password });
+  const register = async (name, email, password) => {
+    await api.post('auth/register/', { first_name: name, email: email.trim().toLowerCase(), password });
+    await login(email, password);
+  };
 
   const logout = () => {
     localStorage.removeItem('access');

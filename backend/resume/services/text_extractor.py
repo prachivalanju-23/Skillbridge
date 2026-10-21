@@ -1,5 +1,10 @@
 import io
-import fitz  # PyMuPDF
+
+try:
+    import pymupdf as fitz  # newer PyMuPDF
+except ImportError:
+    import fitz
+
 from docx import Document
 
 
@@ -9,7 +14,13 @@ def extract_text(uploaded_file):
 
     if name.endswith('.pdf'):
         pdf = fitz.open(stream=data, filetype='pdf')
-        return '\n'.join(page.get_text() for page in pdf)
+        parts = []
+        for page in pdf:
+            # blocks sorted top to bottom, then left to right (fixes scrambled order)
+            for block in page.get_text('blocks', sort=True):
+                if block[6] == 0:  # text block
+                    parts.append(block[4].strip())
+        return '\n'.join(parts)
 
     if name.endswith('.docx'):
         doc = Document(io.BytesIO(data))

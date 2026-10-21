@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import Logo from './Logo';
 
 export default function Navbar() {
   const { isLoggedIn, logout } = useAuth();
@@ -7,7 +8,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <span className="brand">SkillBridge</span>
+      <span className="brand"><Logo size={32} light /></span>
       <div className="links">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/jobs">Jobs</NavLink>

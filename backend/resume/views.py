@@ -54,7 +54,7 @@ class ResumeUploadView(APIView):
         if len(text.strip()) < 30:
             return Response({'message': 'No readable text found (scanned PDF?)'}, status=400)
 
-        parsed = parse_resume(text)
+        parsed = parse_resume(text, file.name)
         total, breakdown = score_resume(parsed)
         user = request.user
 

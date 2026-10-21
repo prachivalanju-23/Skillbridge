@@ -1,0 +1,10 @@
+.sb-logo { display: inline-flex; align-items: center; gap: 10px; line-height: 1; }
+.sb-logo svg { display: block; flex: none; filter: drop-shadow(0 4px 8px rgba(29, 78, 216, .28)); }
+.sb-logo-text { font-weight: 800; letter-spacing: -.02em; color: #0f172a; }
+.sb-logo-text b { color: #2563eb; font-weight: 800; }
+.sb-logo-light .sb-logo-text { color: #fff; }
+.sb-logo-light .sb-logo-text b { color: #bae6fd; }
+
+/* make the top bar blue on my pages so it matches the new theme */
+body:has(.au-wrap) .navbar,
+body:has(.rs-page) .navbar { background: linear-gradient(90deg, #0b2a6f, #1d4ed8); }

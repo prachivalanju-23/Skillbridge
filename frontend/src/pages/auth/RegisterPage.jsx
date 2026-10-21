@@ -1,36 +1,52 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import '../../components/shared.css';
+import { AuthShell, Field, PasswordField, apiError } from './AuthParts';
 
 export default function RegisterPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirm, setConfirm] = useState('');
   const [error, setError] = useState('');
-  const { register } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const { register, isLoggedIn } = useAuth();
   const navigate = useNavigate();
 
-  const submit = async () => {
+  if (isLoggedIn) return <Navigate to="/" replace />;
+
+  const submit = async (e) => {
+    e.preventDefault();
     setError('');
+    if (password !== confirm) return setError('Passwords do not match');
+    setLoading(true);
     try {
       await register(name, email, password);
-      navigate('/login');
-    } catch (e) {
-      const data = e.response && e.response.data;
-      setError((data && (data.email || data.password)) ? JSON.stringify(data) : 'Registration failed');
+      navigate('/resume-upload');
+    } catch (err) {
+      setError(apiError(err, 'Registration failed. Is the backend running?'));
     }
+    setLoading(false);
   };
 
   return (
-    <div className="sb-form sb-card">
-      <h2>Register</h2>
-      <input placeholder="Full name" value={name} onChange={(e) => setName(e.target.value)} />
-      <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      {error && <p className="sb-error">{error}</p>}
-      <button className="sb-btn" onClick={submit}>Register</button>
-      <p>Already registered? <Link to="/login">Login</Link></p>
-    </div>
+    <AuthShell
+      title="Create your account 🚀"
+      subtitle="Join SkillBridge and plan your career."
+      footer={<>Already have an account? <Link className="au-link" to="/login">Log in</Link></>}
+    >
+      <form onSubmit={submit}>
+        {error && <div className="au-error">{error}</div>}
+        <Field label="Full name" placeholder="Your name" autoComplete="name"
+               value={name} onChange={(e) => setName(e.target.value)} required />
+        <Field label="Email" type="email" placeholder="you@example.com" autoComplete="email"
+               value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <PasswordField label="Password" meter placeholder="At least 8 characters" autoComplete="new-password"
+                       value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <PasswordField label="Confirm password" placeholder="Type the password again" autoComplete="new-password"
+                       value={confirm} onChange={(e) => setConfirm(e.target.value)} required />
+        <button className="au-btn" type="submit" disabled={loading}>{loading ? 'Creating account...' : 'Create account'}</button>
+      </form>
+    </AuthShell>
   );
 }
