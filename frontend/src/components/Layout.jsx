@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { Briefcase, Target, Map as MapIcon } from 'lucide-react';
+import { Briefcase, Target, Map as MapIcon, Brain, MessageSquare, BarChart3 } from 'lucide-react';
 import '../design.css';
 
 // Each member adds ONLY their own link in this list
@@ -7,6 +7,10 @@ const navItems = [
   { to: '/careers', label: 'Career Goal', icon: Target },
   { to: '/roadmap', label: 'Roadmap', icon: MapIcon },
   { to: '/jobs', label: 'Jobs', icon: Briefcase },
+  // Member 3 (Nikita)
+  { to: '/aptitude', label: 'Aptitude', icon: Brain },
+  { to: '/interview', label: 'Interview', icon: MessageSquare },
+  { to: '/progress', label: 'Progress', icon: BarChart3 },
 ];
 
 export default function Layout() {

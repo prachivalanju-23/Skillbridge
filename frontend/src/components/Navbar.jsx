@@ -14,10 +14,18 @@ export default function Navbar() {
 
         {isLoggedIn ? (
           <>
+            <>
             {/* Each member adds ONLY their own links below */}
             {/* Member 1: Resume, Skill Gap, Profile (Prachi adds these later) */}
             {/* Member 2: Roadmap */}
             {/* Member 3: Interview, Aptitude, Progress */}
+            <NavLink to="/aptitude">Aptitude</NavLink>
+            <NavLink to="/interview">Interview</NavLink>
+            <NavLink to="/progress">Progress</NavLink>
+            <a href="/login" onClick={(e) => { e.preventDefault(); logout(); navigate('/login'); }}>
+              Logout
+            </a>
+          </>
             <a href="/login" onClick={(e) => { e.preventDefault(); logout(); navigate('/login'); }}>
               Logout
             </a>

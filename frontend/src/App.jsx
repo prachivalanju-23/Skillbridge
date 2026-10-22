@@ -9,6 +9,13 @@ import CareerGoalPage from './pages/CareerGoalPage';
 import RoadmapPage from './pages/RoadmapPage';
 import JobsPage from './pages/JobsPage';
 import JobDetailsPage from './pages/JobDetailsPage';
+//member 3 import
+import AptitudeTestPage from './pages/aptitude/AptitudeTestPage';
+import AptitudeResultPage from './pages/aptitude/AptitudeResultPage';
+import InterviewSelectPage from './pages/interview/InterviewSelectPage';
+import InterviewChatPage from './pages/interview/InterviewChatPage';
+import InterviewResultPage from './pages/interview/InterviewResultPage';
+import ProgressDashboardPage from './pages/progress/ProgressDashboardPage';
 
 function Home() {
   return (
@@ -45,6 +52,13 @@ export default function App() {
 
           {/* Member 1 and Member 3: add your routes here, for example:
           <Route path="/profile" element={<ProfilePage />} /> */}
+                    {/* Member 3 (Nikita): aptitude, interview and progress */}
+          <Route path="/aptitude" element={<AptitudeTestPage />} />
+          <Route path="/aptitude/result" element={<AptitudeResultPage />} />
+          <Route path="/interview" element={<InterviewSelectPage />} />
+          <Route path="/interview/session" element={<InterviewChatPage />} />
+          <Route path="/interview/result/:id" element={<InterviewResultPage />} />
+          <Route path="/progress" element={<ProgressDashboardPage />} />
         </Route>
       </Routes>
     </>
