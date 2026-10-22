@@ -1,5 +1,5 @@
 body:has(.au-wrap) { background: #f4f8ff; }
-.au-wrap { display: grid; grid-template-columns: 1.05fr 1fr; min-height: calc(100vh - 72px); }
+.au-wrap { display: grid; grid-template-columns: 1.05fr 1fr; min-height: 100vh; }
 
 /* ---- left brand panel ---- */
 .au-side { position: relative; overflow: hidden; color: #fff; padding: 56px 52px; display: flex; flex-direction: column;
