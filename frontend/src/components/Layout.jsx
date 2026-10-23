@@ -3,6 +3,8 @@ import { Briefcase, Target, Map as MapIcon, FileText, ListChecks, User } from 'l
 import Logo from './Logo';
 import { useAuth } from '../context/AuthContext';
 import '../design.css';
+import './theme.css';
+import './ui-polish.css';
 
 // Each member adds ONLY their own link in this list
 const navItems = [
@@ -22,7 +24,7 @@ export default function Layout() {
     <div className="app-shell">
       <aside className="sidebar">
         <div className="logo">
-          <Logo size={36} />
+          <Logo size={36} light />
         </div>
 
         <nav className="side-nav">

@@ -11,7 +11,7 @@ body:has(.rs-page) { background: linear-gradient(180deg, #e6efff 0%, #f4f8ff 45%
 /* ---------- hero banner ---------- */
 .rs-hero { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between;
   gap: 24px; flex-wrap: wrap; color: #fff; border-radius: 22px; padding: 28px 32px; margin-bottom: 22px;
-  background: linear-gradient(135deg, #0b2a6f 0%, #1d4ed8 55%, #38bdf8 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 45%, #6366f1 100%);
   box-shadow: 0 16px 36px rgba(29, 78, 216, .28); animation: rs-rise .4s ease both; }
 .rs-hero::before, .rs-hero::after { content: ''; position: absolute; border-radius: 50%; background: rgba(255,255,255,.08); }
 .rs-hero::before { width: 280px; height: 280px; right: -70px; top: -110px; }
