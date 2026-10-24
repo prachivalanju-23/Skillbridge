@@ -26,9 +26,9 @@ export function AuthShell({ title, subtitle, children, footer }) {
       <div className="au-side">
         <div className="au-brand"><Logo size={50} light /></div>
         <h1>Build the skills.<br />Land the career.</h1>
-        <p>An AI-powered career and skill development platform for students.</p>
+        <p>A career and skill development platform for students.</p>
         <ul className="au-points">
-          <li><span>📄</span> Analyze your resume with AI</li>
+          <li><span>📄</span> Analyze your resume and skills</li>
           <li><span>🎯</span> Find your skill gaps</li>
           <li><span>🗺️</span> Get a personal learning roadmap</li>
           <li><span>💼</span> Match with the right jobs</li>

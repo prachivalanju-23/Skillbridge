@@ -45,12 +45,12 @@ export default function Layout() {
           ))}
         </nav>
 
-        <div className="side-footer">AI Career &amp; Skill Platform</div>
+        <div className="side-footer"> Career &amp; Skill Platform</div>
       </aside>
 
       <div className="main-area">
         <header className="topbar">
-          <span className="topbar-title">AI Career &amp; Skill Development Platform</span>
+          <span className="topbar-title">Career &amp; Skill Development Platform</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <button
               onClick={() => { logout(); navigate('/login'); }}

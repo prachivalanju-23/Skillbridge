@@ -1,4 +1,4 @@
-# SkillBridge: AI Career & Skill Development Platform
+# SkillBridge: Career & Skill Development Platform
 
 SkillBridge helps a student understand their skills, find skill gaps, follow a learning roadmap, discover matching jobs, practise interviews and track progress.
 
