@@ -43,8 +43,12 @@ INSTALLED_APPS = [
     'corsheaders',
     'accounts',
     'core',
+    'resume',
     'roadmap',
     'jobs',
+    'interview',
+    'aptitude',
+    'progress',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +150,21 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=12),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+}
+# ---- Password reset email ----
+# Default prints the email in the Django terminal. For real emails set the values in .env
+EMAIL_BACKEND = os.getenv('EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend')
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', '587'))
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'SkillBridge <no-reply@skillbridge.local>')
+FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:5173')
+PASSWORD_RESET_TIMEOUT = 3600  # reset link lasts 1 hour

@@ -1,0 +1,88 @@
+/* ===================== SkillBridge shared theme =====================
+   blue (Member 1) flowing into indigo/violet (Member 2)              */
+
+/* ---------- page background: soft tinted gradient with a dot texture ---------- */
+.app-shell {
+  background:
+    radial-gradient(rgba(79, 70, 229, .08) 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(160deg, #dbe7ff 0%, #e9ecff 45%, #efe7ff 100%) !important;
+}
+.main-area,
+.main-area > main { background: transparent !important; }
+
+/* ---------- sidebar ---------- */
+.sidebar {
+  background:
+    radial-gradient(circle at 105% 4%, rgba(56, 189, 248, .35) 0, transparent 42%),
+    radial-gradient(circle at -15% 98%, rgba(167, 139, 250, .45) 0, transparent 48%),
+    linear-gradient(180deg, #0b1f5e 0%, #1e3a8a 38%, #3b3fc4 72%, #6d28d9 100%) !important;
+  border-right: 0 !important;
+  box-shadow: 6px 0 28px rgba(49, 46, 129, .3);
+}
+.sidebar .logo {
+  padding-bottom: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, .16);
+}
+
+.sidebar .side-link {
+  position: relative;
+  color: rgba(255, 255, 255, .84) !important;
+  font-weight: 600;
+  border-radius: 14px;
+  transition: background .2s, transform .2s, color .2s;
+}
+.sidebar .side-link svg { color: #bfdbfe !important; transition: color .2s; }
+
+.sidebar .side-link:not(.active):hover {
+  background: rgba(255, 255, 255, .13) !important;
+  color: #fff !important;
+  transform: translateX(5px);
+}
+.sidebar .side-link:not(.active):hover svg { color: #fff !important; }
+
+/* active item: glass pill with a glowing accent bar */
+.sidebar .side-link.active {
+  background: linear-gradient(135deg, rgba(255, 255, 255, .26), rgba(255, 255, 255, .1)) !important;
+  color: #fff !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .32), 0 8px 18px rgba(15, 23, 80, .28) !important;
+}
+.sidebar .side-link.active svg { color: #fff !important; }
+.sidebar .side-link.active::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 22%;
+  bottom: 22%;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #38bdf8, #c4b5fd);
+  box-shadow: 0 0 12px rgba(125, 211, 252, .9);
+}
+
+.sidebar .side-footer {
+  color: rgba(255, 255, 255, .65) !important;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  padding-top: 14px;
+}
+
+/* ---------- header ---------- */
+.topbar {
+  background: linear-gradient(90deg, #1e3a8a 0%, #2f4fd8 35%, #5b4de0 70%, #7c3aed 100%) !important;
+  border-bottom: 0 !important;
+  box-shadow: 0 6px 20px rgba(79, 70, 229, .3);
+}
+.topbar .topbar-title { color: #fff !important; }
+.topbar .avatar {
+  background: rgba(255, 255, 255, .2) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, .5);
+}
+.topbar button {
+  background: rgba(255, 255, 255, .16) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, .45) !important;
+  backdrop-filter: blur(6px);
+  transition: background .2s;
+}
+.topbar button:hover { background: rgba(255, 255, 255, .3) !important; }
