@@ -1,5 +1,8 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { Briefcase, Target, Map as MapIcon, FileText, ListChecks, User } from 'lucide-react';
+import {
+  Briefcase, Target, Map as MapIcon, FileText, ListChecks, User,
+  Brain, MessageSquare, BarChart3,
+} from 'lucide-react';
 import Logo from './Logo';
 import { useAuth } from '../context/AuthContext';
 import '../design.css';
@@ -8,12 +11,18 @@ import './ui-polish.css';
 
 // Each member adds ONLY their own link in this list
 const navItems = [
+  // Member 1 (Prachi)
   { to: '/resume-upload', label: 'Resume Upload', icon: FileText },
   { to: '/skill-gap', label: 'Skill Gap', icon: ListChecks },
   { to: '/profile', label: 'Profile', icon: User },
+  // Member 2 (Pradnya)
   { to: '/careers', label: 'Career Goal', icon: Target },
   { to: '/roadmap', label: 'Roadmap', icon: MapIcon },
   { to: '/jobs', label: 'Jobs', icon: Briefcase },
+  // Member 3 (Nikita)
+  { to: '/aptitude', label: 'Aptitude', icon: Brain },
+  { to: '/interview', label: 'Interview', icon: MessageSquare },
+  { to: '/progress', label: 'Progress', icon: BarChart3 },
 ];
 
 export default function Layout() {

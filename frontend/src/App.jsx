@@ -20,6 +20,14 @@ import RoadmapPage from './pages/RoadmapPage';
 import JobsPage from './pages/JobsPage';
 import JobDetailsPage from './pages/JobDetailsPage';
 
+// Member 3 (Nikita): aptitude, interview, progress
+import AptitudeTestPage from './pages/aptitude/AptitudeTestPage';
+import AptitudeResultPage from './pages/aptitude/AptitudeResultPage';
+import InterviewSelectPage from './pages/interview/InterviewSelectPage';
+import InterviewChatPage from './pages/interview/InterviewChatPage';
+import InterviewResultPage from './pages/interview/InterviewResultPage';
+import ProgressDashboardPage from './pages/progress/ProgressDashboardPage';
+
 // Opening the website goes to the profile when logged in, to login otherwise
 function HomeRedirect() {
   const { isLoggedIn } = useAuth();
@@ -58,7 +66,13 @@ export default function App() {
         <Route path="/jobs" element={<JobsPage />} />
         <Route path="/jobs/:id" element={<JobDetailsPage />} />
 
-        {/* Member 3 (Nikita): add your routes here */}
+        {/* Member 3 (Nikita) */}
+        <Route path="/aptitude" element={<AptitudeTestPage />} />
+        <Route path="/aptitude/result" element={<AptitudeResultPage />} />
+        <Route path="/interview" element={<InterviewSelectPage />} />
+        <Route path="/interview/session" element={<InterviewChatPage />} />
+        <Route path="/interview/result/:id" element={<InterviewResultPage />} />
+        <Route path="/progress" element={<ProgressDashboardPage />} />
       </Route>
 
       <Route path="*" element={<HomeRedirect />} />
